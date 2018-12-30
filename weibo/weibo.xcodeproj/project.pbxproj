@@ -13,6 +13,8 @@
 		41D9BCDF21D88ABE00269354 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BCDE21D88ABE00269354 /* main.m */; };
 		41D9BCE921D88ABE00269354 /* weiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BCE821D88ABE00269354 /* weiboTests.m */; };
 		41D9BCF421D88ABF00269354 /* weiboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BCF321D88ABF00269354 /* weiboUITests.m */; };
+		41D9BD0621D8ABC100269354 /* LYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD0521D8ABC100269354 /* LYTabBarController.m */; };
+		41D9BD0921D8C48D00269354 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD0721D8C48D00269354 /* UIImage+image.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,10 @@
 		41D9BCEF21D88ABF00269354 /* weiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D9BCF321D88ABF00269354 /* weiboUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = weiboUITests.m; sourceTree = "<group>"; };
 		41D9BCF521D88ABF00269354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41D9BD0421D8ABC100269354 /* LYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYTabBarController.h; sourceTree = "<group>"; };
+		41D9BD0521D8ABC100269354 /* LYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYTabBarController.m; sourceTree = "<group>"; };
+		41D9BD0721D8C48D00269354 /* UIImage+image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+image.m"; path = "../../../../../../Downloads/微博模拟1/微博模拟1.3/微博模拟/UIImage+image.m"; sourceTree = "<group>"; };
+		41D9BD0821D8C48D00269354 /* UIImage+image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+image.h"; path = "../../../../../../Downloads/微博模拟1/微博模拟1.3/微博模拟/UIImage+image.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +102,16 @@
 		41D9BCCE21D88ABC00269354 /* weibo */ = {
 			isa = PBXGroup;
 			children = (
+				41D9BD0821D8C48D00269354 /* UIImage+image.h */,
+				41D9BD0721D8C48D00269354 /* UIImage+image.m */,
 				41D9BCCF21D88ABC00269354 /* AppDelegate.h */,
 				41D9BCD021D88ABC00269354 /* AppDelegate.m */,
 				41D9BCD821D88ABE00269354 /* Assets.xcassets */,
 				41D9BCDA21D88ABE00269354 /* LaunchScreen.storyboard */,
 				41D9BCDD21D88ABE00269354 /* Info.plist */,
 				41D9BCDE21D88ABE00269354 /* main.m */,
+				41D9BD0421D8ABC100269354 /* LYTabBarController.h */,
+				41D9BD0521D8ABC100269354 /* LYTabBarController.m */,
 			);
 			path = weibo;
 			sourceTree = "<group>";
@@ -255,6 +265,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				41D9BCDF21D88ABE00269354 /* main.m in Sources */,
+				41D9BD0921D8C48D00269354 /* UIImage+image.m in Sources */,
+				41D9BD0621D8ABC100269354 /* LYTabBarController.m in Sources */,
 				41D9BCD121D88ABC00269354 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +434,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SKG75CM69;
 				INFOPLIST_FILE = weibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,6 +453,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SKG75CM69;
 				INFOPLIST_FILE = weibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
