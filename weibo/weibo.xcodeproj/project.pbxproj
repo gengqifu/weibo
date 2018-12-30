@@ -14,7 +14,8 @@
 		41D9BCE921D88ABE00269354 /* weiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BCE821D88ABE00269354 /* weiboTests.m */; };
 		41D9BCF421D88ABF00269354 /* weiboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BCF321D88ABF00269354 /* weiboUITests.m */; };
 		41D9BD0621D8ABC100269354 /* LYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD0521D8ABC100269354 /* LYTabBarController.m */; };
-		41D9BD0921D8C48D00269354 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD0721D8C48D00269354 /* UIImage+image.m */; };
+		41D9BD2A21D8DAD400269354 /* LYTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD2921D8DAD400269354 /* LYTabBar.m */; };
+		41D9BD2D21D8EA6200269354 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD2B21D8EA6100269354 /* UIImage+image.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +51,10 @@
 		41D9BCF521D88ABF00269354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41D9BD0421D8ABC100269354 /* LYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYTabBarController.h; sourceTree = "<group>"; };
 		41D9BD0521D8ABC100269354 /* LYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYTabBarController.m; sourceTree = "<group>"; };
-		41D9BD0721D8C48D00269354 /* UIImage+image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+image.m"; path = "../../../../../../Downloads/微博模拟1/微博模拟1.3/微博模拟/UIImage+image.m"; sourceTree = "<group>"; };
-		41D9BD0821D8C48D00269354 /* UIImage+image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+image.h"; path = "../../../../../../Downloads/微博模拟1/微博模拟1.3/微博模拟/UIImage+image.h"; sourceTree = "<group>"; };
+		41D9BD2821D8DAD400269354 /* LYTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYTabBar.h; sourceTree = "<group>"; };
+		41D9BD2921D8DAD400269354 /* LYTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYTabBar.m; sourceTree = "<group>"; };
+		41D9BD2B21D8EA6100269354 /* UIImage+image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+image.m"; path = "../../../../../../../../../Downloads/微博模拟1/微博模拟1.4-1.5/微博模拟/classes/Other/Category/UIImage+image.m"; sourceTree = "<group>"; };
+		41D9BD2C21D8EA6200269354 /* UIImage+image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+image.h"; path = "../../../../../../../../../Downloads/微博模拟1/微博模拟1.4-1.5/微博模拟/classes/Other/Category/UIImage+image.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,16 +105,10 @@
 		41D9BCCE21D88ABC00269354 /* weibo */ = {
 			isa = PBXGroup;
 			children = (
-				41D9BD0821D8C48D00269354 /* UIImage+image.h */,
-				41D9BD0721D8C48D00269354 /* UIImage+image.m */,
-				41D9BCCF21D88ABC00269354 /* AppDelegate.h */,
-				41D9BCD021D88ABC00269354 /* AppDelegate.m */,
+				41D9BD0C21D8CEEE00269354 /* classes */,
 				41D9BCD821D88ABE00269354 /* Assets.xcassets */,
 				41D9BCDA21D88ABE00269354 /* LaunchScreen.storyboard */,
 				41D9BCDD21D88ABE00269354 /* Info.plist */,
-				41D9BCDE21D88ABE00269354 /* main.m */,
-				41D9BD0421D8ABC100269354 /* LYTabBarController.h */,
-				41D9BD0521D8ABC100269354 /* LYTabBarController.m */,
 			);
 			path = weibo;
 			sourceTree = "<group>";
@@ -132,6 +129,198 @@
 				41D9BCF521D88ABF00269354 /* Info.plist */,
 			);
 			path = weiboUITests;
+			sourceTree = "<group>";
+		};
+		41D9BD0C21D8CEEE00269354 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				41D9BD2121D8D27500269354 /* other */,
+				41D9BD1D21D8D1E800269354 /* profile */,
+				41D9BD1921D8D1CF00269354 /* message */,
+				41D9BD1521D8D15700269354 /* main */,
+				41D9BD1121D8D13600269354 /* home */,
+				41D9BD0D21D8D02400269354 /* discover */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		41D9BD0D21D8D02400269354 /* discover */ = {
+			isa = PBXGroup;
+			children = (
+				41D9BD1021D8D05800269354 /* view */,
+				41D9BD0F21D8D04F00269354 /* model */,
+				41D9BD0E21D8D04600269354 /* controller */,
+			);
+			path = discover;
+			sourceTree = "<group>";
+		};
+		41D9BD0E21D8D04600269354 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		41D9BD0F21D8D04F00269354 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		41D9BD1021D8D05800269354 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		41D9BD1121D8D13600269354 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				41D9BD1421D8D14B00269354 /* view */,
+				41D9BD1321D8D14400269354 /* model */,
+				41D9BD1221D8D13E00269354 /* controller */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		41D9BD1221D8D13E00269354 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		41D9BD1321D8D14400269354 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		41D9BD1421D8D14B00269354 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		41D9BD1521D8D15700269354 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				41D9BD1821D8D16B00269354 /* controller */,
+				41D9BD1721D8D16600269354 /* model */,
+				41D9BD1621D8D16000269354 /* view */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		41D9BD1621D8D16000269354 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				41D9BD2821D8DAD400269354 /* LYTabBar.h */,
+				41D9BD2921D8DAD400269354 /* LYTabBar.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		41D9BD1721D8D16600269354 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		41D9BD1821D8D16B00269354 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				41D9BD0421D8ABC100269354 /* LYTabBarController.h */,
+				41D9BD0521D8ABC100269354 /* LYTabBarController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		41D9BD1921D8D1CF00269354 /* message */ = {
+			isa = PBXGroup;
+			children = (
+				41D9BD1C21D8D1E000269354 /* controller */,
+				41D9BD1B21D8D1DA00269354 /* view */,
+				41D9BD1A21D8D1D400269354 /* model */,
+			);
+			path = message;
+			sourceTree = "<group>";
+		};
+		41D9BD1A21D8D1D400269354 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		41D9BD1B21D8D1DA00269354 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		41D9BD1C21D8D1E000269354 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		41D9BD1D21D8D1E800269354 /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				41D9BD2021D8D23A00269354 /* controller */,
+				41D9BD1F21D8D23400269354 /* model */,
+				41D9BD1E21D8D23000269354 /* view */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
+		41D9BD1E21D8D23000269354 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		41D9BD1F21D8D23400269354 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		41D9BD2021D8D23A00269354 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		41D9BD2121D8D27500269354 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				41D9BCDE21D88ABE00269354 /* main.m */,
+				41D9BCCF21D88ABC00269354 /* AppDelegate.h */,
+				41D9BCD021D88ABC00269354 /* AppDelegate.m */,
+				41D9BD2221D8D29300269354 /* category */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
+		41D9BD2221D8D29300269354 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				41D9BD2C21D8EA6200269354 /* UIImage+image.h */,
+				41D9BD2B21D8EA6100269354 /* UIImage+image.m */,
+			);
+			path = category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,8 +454,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				41D9BCDF21D88ABE00269354 /* main.m in Sources */,
-				41D9BD0921D8C48D00269354 /* UIImage+image.m in Sources */,
 				41D9BD0621D8ABC100269354 /* LYTabBarController.m in Sources */,
+				41D9BD2D21D8EA6200269354 /* UIImage+image.m in Sources */,
+				41D9BD2A21D8DAD400269354 /* LYTabBar.m in Sources */,
 				41D9BCD121D88ABC00269354 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,7 +624,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SKG75CM69;
 				INFOPLIST_FILE = weibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,7 +643,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SKG75CM69;
 				INFOPLIST_FILE = weibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

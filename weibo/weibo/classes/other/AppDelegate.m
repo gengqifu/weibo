@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LYTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -16,41 +17,23 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    NSLog(@"%s",__func__);
+    
     // 创建窗口
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    // 为了展示效果 设置背景色为黄色
-    self.window.backgroundColor = [UIColor yellowColor];
+    //创建自定义tabbarcontroller
     
-    // 创建tabBarViewController
-    UITabBarController *tabBarVc = [[UITabBarController alloc] init];
-    tabBarVc.view.backgroundColor = [UIColor redColor];
-    
-    // 管理子控制器
-    // 首页
-    UIViewController *home = [[UIViewController alloc] init];
-    home.view.backgroundColor = [UIColor greenColor];
-    [tabBarVc addChildViewController:home];
-    
-    // 消息
-    UIViewController *message = [[UIViewController alloc] init];
-    message.view.backgroundColor = [UIColor blueColor];
-    [tabBarVc addChildViewController:message];
-    
-    // 发现
-    UIViewController *discover = [[UIViewController alloc] init];
-    discover.view.backgroundColor = [UIColor purpleColor];
-    [tabBarVc addChildViewController:discover];
-    
-    // 我
-    UIViewController *profile = [[UIViewController alloc] init];
-    profile.view.backgroundColor = [UIColor lightGrayColor];
-    [tabBarVc addChildViewController:profile];
+    LYTabBarController *tabBarVc = [[LYTabBarController alloc]init];
     
     // 设置窗口的根控制器
+    
     self.window.rootViewController = tabBarVc;
     
     // 显示窗口
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
