@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LYTabBar : UITabBar
+@class LYTabBar;
+@protocol LYTabBarDelegate <NSObject>
 
+@optional
+-(void)tabBar:(LYTabBar*)tabBar didClickButton:(NSInteger)index;
+
+@end
+
+@interface LYTabBar : UIView
+
+// items:保存每一个按钮对应tabBarItem模型
+@property (nonatomic, strong) NSArray *items;
+
+@property(nonatomic,weak) id <LYTabBarDelegate> delegate;
 @end

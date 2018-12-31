@@ -9,53 +9,64 @@
 #import "LYTabBarController.h"
 #import "UIImage+image.h"
 #import "LYTabBar.h"
+#import "LYHomeViewController.h"
+#import "LYMessageViewController.h"
+#import "LYDiscoverViewController.h"
+#import "LYProfileViewController.h"
 
-@interface LYTabBarController ()
+@interface LYTabBarController ()<LYTabBarDelegate>
+
+@property(nonatomic,strong) NSMutableArray *items;
 
 @end
 
 @implementation LYTabBarController
 
-+ (void)initialize
+- (NSMutableArray *)items
 {
-    // 这行代码是获取所有的tabBarItem外观标识，这样就容易把不希望改动到外观也更改了
-    //  UITabBarItem *item = [UITabBarItem appearance];
-    //一般采用带 self的方法，这里self就是指 YGTabBarController
-    
-    // 获取当前这个类下面的所有tabBarItem
-    UITabBarItem *item = [UITabBarItem appearanceWhenContainedIn:self, nil];
-    NSMutableDictionary *att = [NSMutableDictionary dictionary];
-    
-    //这里也可以用[att setObject:[UIColor orangeColor] forKey:NSForegroundColorAttributeName];
-    //来设置富文本字典，两种方法都可以。
-    att[NSForegroundColorAttributeName] = [UIColor orangeColor];
-    
-    [item setTitleTextAttributes:att forState:UIControlStateSelected];
+    if (_items == nil) {
+        
+        _items = [NSMutableArray array];
+        
+    }
+    return _items;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     //添加子控制器
     [self setUpAllChildViewController];
-    
-    //// 自定义tabBar
-    LYTabBar *tabBar = [[LYTabBar alloc] initWithFrame:self.tabBar.frame];
-    
-    // 利用KVC更改readonly的属性
-    [self setValue:tabBar forKeyPath:@"tabBar"];
-    NSLog(@"%@---%s",self.tabBar.subviews,__func__);
+    //
+    [self setUpTabBar];
     
 }
 
--(void)viewWillAppear:(BOOL)animated
+#pragma mark - 设置自定义tabBar
+-(void)setUpTabBar
 {
-    NSLog(@"%@---%s",self.tabBar.subviews ,__func__);
+    // 自定义tabBar
+    LYTabBar *tabBar = [[LYTabBar alloc] initWithFrame:self.tabBar.frame];
+    tabBar.backgroundColor = [UIColor whiteColor];
     
+    // 设置代理
+    tabBar.delegate = self;
+    
+    // 给tabBar传递tabBarItem模型
+    NSLog(@"this is items%@",self.items);
+    tabBar.items = self.items;
+    
+    // 添加自定义tabBar
+    [self.view addSubview:tabBar];
+    
+    // 移除系统的tabBar
+    [self.tabBar removeFromSuperview];
 }
--(void)viewDidAppear:(BOOL)animated
+
+#pragma mark - 当点击tabBar上的按钮调用
+-(void)tabBar:(LYTabBar *)tabBar didClickButton:(NSInteger)index
 {
-    NSLog(@"%@---%s",self.tabBar.subviews ,__func__);
-    
+    self.selectedIndex = index;
+    NSLog(@"this is click");
 }
 
 #pragma mark-添加所有子控制器
@@ -65,27 +76,27 @@
     // 管理子控制器
     
     // 首页
-    UIViewController *home = [[UIViewController alloc] init];
+    LYHomeViewController *home = [[LYHomeViewController alloc] init];
     [self setUpOneChildViewController:home image:[UIImage imageNamed:@"tabbar_home"] selectedImage:[UIImage imageWithOriginalName:@"tabbar_home_selected"] title:@"首页"];
     home.view.backgroundColor = [UIColor greenColor];
     
     // 消息
-    UIViewController *message = [[UIViewController alloc] init];
+    LYMessageViewController *message = [[LYMessageViewController alloc] init];
     [self setUpOneChildViewController:message image:[UIImage imageNamed:@"tabbar_message_center"] selectedImage:[UIImage imageWithOriginalName:@"tabbar_message_center_selected"] title:@"消息"];
     message.view.backgroundColor = [UIColor blueColor];
     
     // 发现
-    UIViewController *discover = [[UIViewController alloc] init];
+    LYDiscoverViewController *discover = [[LYDiscoverViewController alloc] init];
     [self setUpOneChildViewController:discover image:[UIImage imageNamed:@"tabbar_discover"] selectedImage:[UIImage imageWithOriginalName:@"tabbar_discover_selected"] title:@"发现"];
     discover.view.backgroundColor = [UIColor purpleColor];
     
     
     // 我
-    UIViewController *profile = [[UIViewController alloc] init];
+    LYProfileViewController *profile = [[LYProfileViewController alloc] init];
     [self setUpOneChildViewController:profile image:[UIImage imageNamed:@"tabbar_profile"] selectedImage:[UIImage imageWithOriginalName:@"tabbar_profile_selected"] title:@"我"];
     profile.view.backgroundColor = [UIColor lightGrayColor];
-    NSLog(@"---%@--%s",self.tabBar.subviews,__func__);
 }
+
 
 #pragma mark - 添加一个子控制器
 - (void)setUpOneChildViewController:(UIViewController *)vc image:(UIImage *)image selectedImage:(UIImage *)selectedImage title:(NSString *)title
@@ -94,6 +105,7 @@
     vc.tabBarItem.image = image;
     vc.tabBarItem.badgeValue = @"10";
     vc.tabBarItem.selectedImage = selectedImage;
+    [self.items addObject:vc.tabBarItem];
     [self addChildViewController:vc];
 }
 
