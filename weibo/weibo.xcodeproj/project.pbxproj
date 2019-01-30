@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41A8A7F322014836004966D4 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7EF22014836004966D4 /* UIView+Frame.m */; };
+		41A8A7F422014836004966D4 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7F122014836004966D4 /* UIImage+image.m */; };
 		41D9BCD121D88ABC00269354 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BCD021D88ABC00269354 /* AppDelegate.m */; };
 		41D9BCD921D88ABE00269354 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41D9BCD821D88ABE00269354 /* Assets.xcassets */; };
 		41D9BCDC21D88ABE00269354 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41D9BCDA21D88ABE00269354 /* LaunchScreen.storyboard */; };
@@ -15,14 +17,12 @@
 		41D9BCF421D88ABF00269354 /* weiboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BCF321D88ABF00269354 /* weiboUITests.m */; };
 		41D9BD0621D8ABC100269354 /* LYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD0521D8ABC100269354 /* LYTabBarController.m */; };
 		41D9BD2A21D8DAD400269354 /* LYTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD2921D8DAD400269354 /* LYTabBar.m */; };
-		41D9BD2D21D8EA6200269354 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD2B21D8EA6100269354 /* UIImage+image.m */; };
 		41D9BD3221D9DF3600269354 /* LYBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD3121D9DF3600269354 /* LYBadgeView.m */; };
 		41D9BD3521D9E3A200269354 /* LYProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD3421D9E3A200269354 /* LYProfileViewController.m */; };
 		41D9BD3821D9E3C500269354 /* LYMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD3721D9E3C500269354 /* LYMessageViewController.m */; };
 		41D9BD3B21D9E3F100269354 /* LYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD3A21D9E3F100269354 /* LYHomeViewController.m */; };
 		41D9BD3E21D9E40700269354 /* LYDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD3D21D9E40700269354 /* LYDiscoverViewController.m */; };
 		41D9BD4121D9E56300269354 /* LYTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD4021D9E56300269354 /* LYTabBarButton.m */; };
-		41D9BD4421D9EC1300269354 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BD4321D9EC1300269354 /* UIView+Frame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41A8A7EF22014836004966D4 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		41A8A7F022014836004966D4 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		41A8A7F122014836004966D4 /* UIImage+image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+image.m"; sourceTree = "<group>"; };
+		41A8A7F222014836004966D4 /* UIImage+image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+image.h"; sourceTree = "<group>"; };
 		41D9BCCC21D88ABC00269354 /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D9BCCF21D88ABC00269354 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		41D9BCD021D88ABC00269354 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -60,8 +64,6 @@
 		41D9BD0521D8ABC100269354 /* LYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYTabBarController.m; sourceTree = "<group>"; };
 		41D9BD2821D8DAD400269354 /* LYTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYTabBar.h; sourceTree = "<group>"; };
 		41D9BD2921D8DAD400269354 /* LYTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYTabBar.m; sourceTree = "<group>"; };
-		41D9BD2B21D8EA6100269354 /* UIImage+image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+image.m"; path = "../../../../../../../../../Downloads/微博模拟1/微博模拟1.4-1.5/微博模拟/classes/Other/Category/UIImage+image.m"; sourceTree = "<group>"; };
-		41D9BD2C21D8EA6200269354 /* UIImage+image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+image.h"; path = "../../../../../../../../../Downloads/微博模拟1/微博模拟1.4-1.5/微博模拟/classes/Other/Category/UIImage+image.h"; sourceTree = "<group>"; };
 		41D9BD3021D9DF3600269354 /* LYBadgeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYBadgeView.h; sourceTree = "<group>"; };
 		41D9BD3121D9DF3600269354 /* LYBadgeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYBadgeView.m; sourceTree = "<group>"; };
 		41D9BD3321D9E3A200269354 /* LYProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYProfileViewController.h; sourceTree = "<group>"; };
@@ -74,8 +76,6 @@
 		41D9BD3D21D9E40700269354 /* LYDiscoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYDiscoverViewController.m; sourceTree = "<group>"; };
 		41D9BD3F21D9E56300269354 /* LYTabBarButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYTabBarButton.h; sourceTree = "<group>"; };
 		41D9BD4021D9E56300269354 /* LYTabBarButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYTabBarButton.m; sourceTree = "<group>"; };
-		41D9BD4221D9EC1300269354 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Frame.h"; path = "../../../../../../../../../Downloads/微博模拟2/微博模拟2.1/微博模拟/classes/Other/Category/UIView+Frame.h"; sourceTree = "<group>"; };
-		41D9BD4321D9EC1300269354 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Frame.m"; path = "../../../../../../../../../Downloads/微博模拟2/微博模拟2.1/微博模拟/classes/Other/Category/UIView+Frame.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,10 +350,10 @@
 		41D9BD2221D8D29300269354 /* category */ = {
 			isa = PBXGroup;
 			children = (
-				41D9BD4221D9EC1300269354 /* UIView+Frame.h */,
-				41D9BD4321D9EC1300269354 /* UIView+Frame.m */,
-				41D9BD2C21D8EA6200269354 /* UIImage+image.h */,
-				41D9BD2B21D8EA6100269354 /* UIImage+image.m */,
+				41A8A7F222014836004966D4 /* UIImage+image.h */,
+				41A8A7F122014836004966D4 /* UIImage+image.m */,
+				41A8A7F022014836004966D4 /* UIView+Frame.h */,
+				41A8A7EF22014836004966D4 /* UIView+Frame.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -488,18 +488,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41D9BD4421D9EC1300269354 /* UIView+Frame.m in Sources */,
 				41D9BD3B21D9E3F100269354 /* LYHomeViewController.m in Sources */,
 				41D9BCDF21D88ABE00269354 /* main.m in Sources */,
 				41D9BD3221D9DF3600269354 /* LYBadgeView.m in Sources */,
 				41D9BD0621D8ABC100269354 /* LYTabBarController.m in Sources */,
-				41D9BD2D21D8EA6200269354 /* UIImage+image.m in Sources */,
 				41D9BD2A21D8DAD400269354 /* LYTabBar.m in Sources */,
+				41A8A7F422014836004966D4 /* UIImage+image.m in Sources */,
 				41D9BD3E21D9E40700269354 /* LYDiscoverViewController.m in Sources */,
 				41D9BD3821D9E3C500269354 /* LYMessageViewController.m in Sources */,
 				41D9BD3521D9E3A200269354 /* LYProfileViewController.m in Sources */,
 				41D9BD4121D9E56300269354 /* LYTabBarButton.m in Sources */,
 				41D9BCD121D88ABC00269354 /* AppDelegate.m in Sources */,
+				41A8A7F322014836004966D4 /* UIView+Frame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
