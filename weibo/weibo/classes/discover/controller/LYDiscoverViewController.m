@@ -7,6 +7,7 @@
 //
 
 #import "LYDiscoverViewController.h"
+#import "LYSearchBar.h"
 
 @interface LYDiscoverViewController ()
 
@@ -17,11 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // 创建搜索框
+    LYSearchBar *searchBar = [[LYSearchBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 35)];
+    searchBar.placeholder = @"大家都在搜";
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // 设置titleView为搜索框
+    self.navigationItem.titleView = searchBar;
 }
 
 #pragma mark - Table view data source

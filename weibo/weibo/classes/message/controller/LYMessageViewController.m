@@ -17,11 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    UIBarButtonItem *chat = [[UIBarButtonItem alloc] initWithTitle:@"发起聊天"  style:UIBarButtonItemStyleBordered target:self action:@selector(chat)];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = chat;
+    
+}
+
+// NSLog调试阶段
+- (void)chat
+{
+    LYLog(@"%s",__func__);
+    //    NSLog(@"%s",__func__);
 }
 
 #pragma mark - Table view data source

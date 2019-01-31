@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		41A8A7F322014836004966D4 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7EF22014836004966D4 /* UIView+Frame.m */; };
 		41A8A7F422014836004966D4 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7F122014836004966D4 /* UIImage+image.m */; };
+		41A8A7F722014BFA004966D4 /* LYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7F622014BFA004966D4 /* LYNavigationController.m */; };
+		41A8A80422029B8D004966D4 /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A80322029B8D004966D4 /* UIBarButtonItem+Item.m */; };
+		41A8A80B2202A0F8004966D4 /* LYCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A8052202A0F7004966D4 /* LYCover.m */; };
+		41A8A80C2202A0F8004966D4 /* LYPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A8072202A0F7004966D4 /* LYPopMenu.m */; };
+		41A8A80D2202A0F8004966D4 /* LYHomeTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A80A2202A0F7004966D4 /* LYHomeTitle.m */; };
+		41A8A8102202A81A004966D4 /* LYMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A80F2202A81A004966D4 /* LYMenuViewController.m */; };
+		41A8A8142202E11A004966D4 /* LYSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A8132202E11A004966D4 /* LYSearchBar.m */; };
 		41D9BCD121D88ABC00269354 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D9BCD021D88ABC00269354 /* AppDelegate.m */; };
 		41D9BCD921D88ABE00269354 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41D9BCD821D88ABE00269354 /* Assets.xcassets */; };
 		41D9BCDC21D88ABE00269354 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41D9BCDA21D88ABE00269354 /* LaunchScreen.storyboard */; };
@@ -47,6 +54,21 @@
 		41A8A7F022014836004966D4 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		41A8A7F122014836004966D4 /* UIImage+image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+image.m"; sourceTree = "<group>"; };
 		41A8A7F222014836004966D4 /* UIImage+image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+image.h"; sourceTree = "<group>"; };
+		41A8A7F522014BFA004966D4 /* LYNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYNavigationController.h; sourceTree = "<group>"; };
+		41A8A7F622014BFA004966D4 /* LYNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYNavigationController.m; sourceTree = "<group>"; };
+		41A8A80222029B8D004966D4 /* UIBarButtonItem+Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Item.h"; sourceTree = "<group>"; };
+		41A8A80322029B8D004966D4 /* UIBarButtonItem+Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Item.m"; sourceTree = "<group>"; };
+		41A8A8052202A0F7004966D4 /* LYCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYCover.m; sourceTree = "<group>"; };
+		41A8A8062202A0F7004966D4 /* LYPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYPopMenu.h; sourceTree = "<group>"; };
+		41A8A8072202A0F7004966D4 /* LYPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYPopMenu.m; sourceTree = "<group>"; };
+		41A8A8082202A0F7004966D4 /* LYCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYCover.h; sourceTree = "<group>"; };
+		41A8A8092202A0F7004966D4 /* LYHomeTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYHomeTitle.h; sourceTree = "<group>"; };
+		41A8A80A2202A0F7004966D4 /* LYHomeTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYHomeTitle.m; sourceTree = "<group>"; };
+		41A8A80E2202A81A004966D4 /* LYMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYMenuViewController.h; sourceTree = "<group>"; };
+		41A8A80F2202A81A004966D4 /* LYMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYMenuViewController.m; sourceTree = "<group>"; };
+		41A8A8112202D6D2004966D4 /* weibo.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weibo.pch; sourceTree = "<group>"; };
+		41A8A8122202E11A004966D4 /* LYSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSearchBar.h; sourceTree = "<group>"; };
+		41A8A8132202E11A004966D4 /* LYSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSearchBar.m; sourceTree = "<group>"; };
 		41D9BCCC21D88ABC00269354 /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D9BCCF21D88ABC00269354 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		41D9BCD021D88ABC00269354 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -194,6 +216,8 @@
 		41D9BD1021D8D05800269354 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				41A8A8122202E11A004966D4 /* LYSearchBar.h */,
+				41A8A8132202E11A004966D4 /* LYSearchBar.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -211,6 +235,8 @@
 		41D9BD1221D8D13E00269354 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				41A8A80E2202A81A004966D4 /* LYMenuViewController.h */,
+				41A8A80F2202A81A004966D4 /* LYMenuViewController.m */,
 				41D9BD3921D9E3F100269354 /* LYHomeViewController.h */,
 				41D9BD3A21D9E3F100269354 /* LYHomeViewController.m */,
 			);
@@ -227,6 +253,12 @@
 		41D9BD1421D8D14B00269354 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				41A8A8082202A0F7004966D4 /* LYCover.h */,
+				41A8A8052202A0F7004966D4 /* LYCover.m */,
+				41A8A8092202A0F7004966D4 /* LYHomeTitle.h */,
+				41A8A80A2202A0F7004966D4 /* LYHomeTitle.m */,
+				41A8A8062202A0F7004966D4 /* LYPopMenu.h */,
+				41A8A8072202A0F7004966D4 /* LYPopMenu.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -266,6 +298,8 @@
 			children = (
 				41D9BD0421D8ABC100269354 /* LYTabBarController.h */,
 				41D9BD0521D8ABC100269354 /* LYTabBarController.m */,
+				41A8A7F522014BFA004966D4 /* LYNavigationController.h */,
+				41A8A7F622014BFA004966D4 /* LYNavigationController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -339,6 +373,7 @@
 		41D9BD2121D8D27500269354 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				41A8A8112202D6D2004966D4 /* weibo.pch */,
 				41D9BCDE21D88ABE00269354 /* main.m */,
 				41D9BCCF21D88ABC00269354 /* AppDelegate.h */,
 				41D9BCD021D88ABC00269354 /* AppDelegate.m */,
@@ -350,6 +385,8 @@
 		41D9BD2221D8D29300269354 /* category */ = {
 			isa = PBXGroup;
 			children = (
+				41A8A80222029B8D004966D4 /* UIBarButtonItem+Item.h */,
+				41A8A80322029B8D004966D4 /* UIBarButtonItem+Item.m */,
 				41A8A7F222014836004966D4 /* UIImage+image.h */,
 				41A8A7F122014836004966D4 /* UIImage+image.m */,
 				41A8A7F022014836004966D4 /* UIView+Frame.h */,
@@ -488,14 +525,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A8A80D2202A0F8004966D4 /* LYHomeTitle.m in Sources */,
+				41A8A7F722014BFA004966D4 /* LYNavigationController.m in Sources */,
 				41D9BD3B21D9E3F100269354 /* LYHomeViewController.m in Sources */,
 				41D9BCDF21D88ABE00269354 /* main.m in Sources */,
 				41D9BD3221D9DF3600269354 /* LYBadgeView.m in Sources */,
 				41D9BD0621D8ABC100269354 /* LYTabBarController.m in Sources */,
+				41A8A8142202E11A004966D4 /* LYSearchBar.m in Sources */,
+				41A8A80B2202A0F8004966D4 /* LYCover.m in Sources */,
+				41A8A80422029B8D004966D4 /* UIBarButtonItem+Item.m in Sources */,
 				41D9BD2A21D8DAD400269354 /* LYTabBar.m in Sources */,
 				41A8A7F422014836004966D4 /* UIImage+image.m in Sources */,
 				41D9BD3E21D9E40700269354 /* LYDiscoverViewController.m in Sources */,
+				41A8A80C2202A0F8004966D4 /* LYPopMenu.m in Sources */,
 				41D9BD3821D9E3C500269354 /* LYMessageViewController.m in Sources */,
+				41A8A8102202A81A004966D4 /* LYMenuViewController.m in Sources */,
 				41D9BD3521D9E3A200269354 /* LYProfileViewController.m in Sources */,
 				41D9BD4121D9E56300269354 /* LYTabBarButton.m in Sources */,
 				41D9BCD121D88ABC00269354 /* AppDelegate.m in Sources */,
@@ -665,6 +709,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SKG75CM69;
+				GCC_PREFIX_HEADER = /Users/gengqifu/dev/git/external/weibo/weibo/weibo/classes/other/weibo.pch;
 				INFOPLIST_FILE = weibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -684,6 +729,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5SKG75CM69;
+				GCC_PREFIX_HEADER = /Users/gengqifu/dev/git/external/weibo/weibo/weibo/classes/other/weibo.pch;
 				INFOPLIST_FILE = weibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (

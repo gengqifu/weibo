@@ -13,6 +13,7 @@
 #import "LYMessageViewController.h"
 #import "LYDiscoverViewController.h"
 #import "LYProfileViewController.h"
+#import "LYNavigationController.h"
 
 @interface LYTabBarController ()<LYTabBarDelegate>
 
@@ -101,12 +102,16 @@
 #pragma mark - 添加一个子控制器
 - (void)setUpOneChildViewController:(UIViewController *)vc image:(UIImage *)image selectedImage:(UIImage *)selectedImage title:(NSString *)title
 {
-    vc.tabBarItem.title = title;
+    vc.title = title;
     vc.tabBarItem.image = image;
     vc.tabBarItem.badgeValue = @"10";
     vc.tabBarItem.selectedImage = selectedImage;
+//    [self.items addObject:vc.tabBarItem];
+//    [self addChildViewController:vc];
+    
     [self.items addObject:vc.tabBarItem];
-    [self addChildViewController:vc];
+    LYNavigationController *nav = [[LYNavigationController alloc]initWithRootViewController:vc];
+    [self addChildViewController:nav];
 }
 
 - (void)didReceiveMemoryWarning {

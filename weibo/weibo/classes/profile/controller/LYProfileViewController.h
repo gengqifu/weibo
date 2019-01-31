@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LYProfileViewController : UIViewController
+@interface LYProfileViewController : UITableViewController
 
 @end
 
