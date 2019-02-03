@@ -46,7 +46,8 @@
 -(void)setUpTabBar
 {
     // 自定义tabBar
-    LYTabBar *tabBar = [[LYTabBar alloc] initWithFrame:self.tabBar.frame];
+    //LYTabBar *tabBar = [[LYTabBar alloc] initWithFrame:self.tabBar.frame];
+    LYTabBar *tabBar = [[LYTabBar alloc] initWithFrame:self.tabBar.bounds];
     tabBar.backgroundColor = [UIColor whiteColor];
     
     // 设置代理
@@ -57,10 +58,11 @@
     tabBar.items = self.items;
     
     // 添加自定义tabBar
-    [self.view addSubview:tabBar];
+    //[self.view addSubview:tabBar];
+    [self.tabBar addSubview:tabBar];
     
     // 移除系统的tabBar
-    [self.tabBar removeFromSuperview];
+    //[self.tabBar removeFromSuperview];
 }
 
 #pragma mark - 当点击tabBar上的按钮调用
@@ -117,6 +119,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    //移除系统的UITabBarButton
+//    for(UIView *tabBarButton in self.tabBar.subviews)
+//    {
+//        if ([tabBarButton isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+//            [tabBarButton removeFromSuperview];
+//        }
+//    }
 }
 
 /*

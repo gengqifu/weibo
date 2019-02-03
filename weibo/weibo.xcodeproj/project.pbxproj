@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		418625E22206DD9B00E521DB /* LYOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418625E02206DD9A00E521DB /* LYOneViewController.m */; };
+		418625E32206DD9B00E521DB /* LYOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 418625E12206DD9A00E521DB /* LYOneViewController.xib */; };
+		418625E72206E53500E521DB /* LYTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418625E52206E53500E521DB /* LYTwoViewController.m */; };
+		418625E82206E53500E521DB /* LYTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 418625E62206E53500E521DB /* LYTwoViewController.xib */; };
 		41A8A7F322014836004966D4 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7EF22014836004966D4 /* UIView+Frame.m */; };
 		41A8A7F422014836004966D4 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7F122014836004966D4 /* UIImage+image.m */; };
 		41A8A7F722014BFA004966D4 /* LYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7F622014BFA004966D4 /* LYNavigationController.m */; };
@@ -50,6 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		418625DF2206DD9A00E521DB /* LYOneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYOneViewController.h; sourceTree = "<group>"; };
+		418625E02206DD9A00E521DB /* LYOneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYOneViewController.m; sourceTree = "<group>"; };
+		418625E12206DD9A00E521DB /* LYOneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LYOneViewController.xib; sourceTree = "<group>"; };
+		418625E42206E53500E521DB /* LYTwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYTwoViewController.h; sourceTree = "<group>"; };
+		418625E52206E53500E521DB /* LYTwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYTwoViewController.m; sourceTree = "<group>"; };
+		418625E62206E53500E521DB /* LYTwoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LYTwoViewController.xib; sourceTree = "<group>"; };
 		41A8A7EF22014836004966D4 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		41A8A7F022014836004966D4 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		41A8A7F122014836004966D4 /* UIImage+image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+image.m"; sourceTree = "<group>"; };
@@ -239,6 +249,12 @@
 				41A8A80F2202A81A004966D4 /* LYMenuViewController.m */,
 				41D9BD3921D9E3F100269354 /* LYHomeViewController.h */,
 				41D9BD3A21D9E3F100269354 /* LYHomeViewController.m */,
+				418625DF2206DD9A00E521DB /* LYOneViewController.h */,
+				418625E02206DD9A00E521DB /* LYOneViewController.m */,
+				418625E12206DD9A00E521DB /* LYOneViewController.xib */,
+				418625E42206E53500E521DB /* LYTwoViewController.h */,
+				418625E52206E53500E521DB /* LYTwoViewController.m */,
+				418625E62206E53500E521DB /* LYTwoViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -499,7 +515,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				418625E32206DD9B00E521DB /* LYOneViewController.xib in Resources */,
 				41D9BCDC21D88ABE00269354 /* LaunchScreen.storyboard in Resources */,
+				418625E82206E53500E521DB /* LYTwoViewController.xib in Resources */,
 				41D9BCD921D88ABE00269354 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +545,7 @@
 			files = (
 				41A8A80D2202A0F8004966D4 /* LYHomeTitle.m in Sources */,
 				41A8A7F722014BFA004966D4 /* LYNavigationController.m in Sources */,
+				418625E22206DD9B00E521DB /* LYOneViewController.m in Sources */,
 				41D9BD3B21D9E3F100269354 /* LYHomeViewController.m in Sources */,
 				41D9BCDF21D88ABE00269354 /* main.m in Sources */,
 				41D9BD3221D9DF3600269354 /* LYBadgeView.m in Sources */,
@@ -536,6 +555,7 @@
 				41A8A80422029B8D004966D4 /* UIBarButtonItem+Item.m in Sources */,
 				41D9BD2A21D8DAD400269354 /* LYTabBar.m in Sources */,
 				41A8A7F422014836004966D4 /* UIImage+image.m in Sources */,
+				418625E72206E53500E521DB /* LYTwoViewController.m in Sources */,
 				41D9BD3E21D9E40700269354 /* LYDiscoverViewController.m in Sources */,
 				41A8A80C2202A0F8004966D4 /* LYPopMenu.m in Sources */,
 				41D9BD3821D9E3C500269354 /* LYMessageViewController.m in Sources */,
