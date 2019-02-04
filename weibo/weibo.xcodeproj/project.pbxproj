@@ -11,6 +11,8 @@
 		418625E32206DD9B00E521DB /* LYOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 418625E12206DD9A00E521DB /* LYOneViewController.xib */; };
 		418625E72206E53500E521DB /* LYTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418625E52206E53500E521DB /* LYTwoViewController.m */; };
 		418625E82206E53500E521DB /* LYTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 418625E62206E53500E521DB /* LYTwoViewController.xib */; };
+		418625F62208180F00E521DB /* LYNewFeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 418625F52208180F00E521DB /* LYNewFeatureCell.m */; };
+		418625F92208199F00E521DB /* LYNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 418625F82208199F00E521DB /* LYNewFeatureController.m */; };
 		41A8A7F322014836004966D4 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7EF22014836004966D4 /* UIView+Frame.m */; };
 		41A8A7F422014836004966D4 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7F122014836004966D4 /* UIImage+image.m */; };
 		41A8A7F722014BFA004966D4 /* LYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7F622014BFA004966D4 /* LYNavigationController.m */; };
@@ -60,6 +62,10 @@
 		418625E42206E53500E521DB /* LYTwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYTwoViewController.h; sourceTree = "<group>"; };
 		418625E52206E53500E521DB /* LYTwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYTwoViewController.m; sourceTree = "<group>"; };
 		418625E62206E53500E521DB /* LYTwoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LYTwoViewController.xib; sourceTree = "<group>"; };
+		418625F42208180F00E521DB /* LYNewFeatureCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYNewFeatureCell.h; sourceTree = "<group>"; };
+		418625F52208180F00E521DB /* LYNewFeatureCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYNewFeatureCell.m; sourceTree = "<group>"; };
+		418625F72208199F00E521DB /* LYNewFeatureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYNewFeatureController.h; sourceTree = "<group>"; };
+		418625F82208199F00E521DB /* LYNewFeatureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYNewFeatureController.m; sourceTree = "<group>"; };
 		41A8A7EF22014836004966D4 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		41A8A7F022014836004966D4 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		41A8A7F122014836004966D4 /* UIImage+image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+image.m"; sourceTree = "<group>"; };
@@ -135,6 +141,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		418625ED2208169800E521DB /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				418625F02208173E00E521DB /* view */,
+				418625EF2208173700E521DB /* model */,
+				418625EE2208172D00E521DB /* controller */,
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		418625EE2208172D00E521DB /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				418625F72208199F00E521DB /* LYNewFeatureController.h */,
+				418625F82208199F00E521DB /* LYNewFeatureController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		418625EF2208173700E521DB /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		418625F02208173E00E521DB /* view */ = {
+			isa = PBXGroup;
+			children = (
+				418625F42208180F00E521DB /* LYNewFeatureCell.h */,
+				418625F52208180F00E521DB /* LYNewFeatureCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		41D9BCC321D88ABC00269354 = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +228,7 @@
 		41D9BD0C21D8CEEE00269354 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				418625ED2208169800E521DB /* NewFeature */,
 				41D9BD2121D8D27500269354 /* other */,
 				41D9BD1D21D8D1E800269354 /* profile */,
 				41D9BD1921D8D1CF00269354 /* message */,
@@ -547,6 +589,7 @@
 				41A8A7F722014BFA004966D4 /* LYNavigationController.m in Sources */,
 				418625E22206DD9B00E521DB /* LYOneViewController.m in Sources */,
 				41D9BD3B21D9E3F100269354 /* LYHomeViewController.m in Sources */,
+				418625F62208180F00E521DB /* LYNewFeatureCell.m in Sources */,
 				41D9BCDF21D88ABE00269354 /* main.m in Sources */,
 				41D9BD3221D9DF3600269354 /* LYBadgeView.m in Sources */,
 				41D9BD0621D8ABC100269354 /* LYTabBarController.m in Sources */,
@@ -555,6 +598,7 @@
 				41A8A80422029B8D004966D4 /* UIBarButtonItem+Item.m in Sources */,
 				41D9BD2A21D8DAD400269354 /* LYTabBar.m in Sources */,
 				41A8A7F422014836004966D4 /* UIImage+image.m in Sources */,
+				418625F92208199F00E521DB /* LYNewFeatureController.m in Sources */,
 				418625E72206E53500E521DB /* LYTwoViewController.m in Sources */,
 				41D9BD3E21D9E40700269354 /* LYDiscoverViewController.m in Sources */,
 				41A8A80C2202A0F8004966D4 /* LYPopMenu.m in Sources */,
