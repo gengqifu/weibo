@@ -14,21 +14,131 @@
 #import "LYMenuViewController.h"
 #import "LYOneViewController.h"
 
+#import "AFNetworking.h"
+#import "MJExtension.h"
+#import "UIImageView+WebCache.h"
+#import "MJRefresh.h"
+
+#import "LYStatus.h"
+#import "LYAccountTool.h"
+#import "LYAccount.h"
+
 @interface LYHomeViewController ()<LYCoverDelegate>
 
 @property (nonatomic, weak) LYHomeTitle *titleButton;
 
 @property (nonatomic, strong) LYMenuViewController *menu;
 
+@property (nonatomic, strong) NSMutableArray *statuses;
+
 @end
 
 @implementation LYHomeViewController
+
+- (NSMutableArray *)statuses
+{
+    if (_statuses == nil) {
+        _statuses = [NSMutableArray array];
+    }
+    return _statuses;
+}
+
+-(LYMenuViewController*)menu
+{
+    if (_menu==nil) {
+        _menu = [[LYMenuViewController alloc]init];
+    }
+    return _menu;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // 设置导航条内容
     [self setUpNavgationBar];
+    
+    //添加下拉刷新控件，请求最新微博数据
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewStatus)];
+    [self.tableView.mj_header beginRefreshing];
+    
+    //添加上拉刷新旧微博控件
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreStatus)];
+    
+    //[self loadNewStatus];
+}
+
+#pragma mark - 请求最新的微博
+- (void)loadNewStatus
+{
+    // 创建请求管理者
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 创建一个参数字典
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    if (self.statuses.count) {
+        params[@"since_id"] = [self.statuses[0] idstr];
+    }
+    
+    params[@"access_token"] = [LYAccountTool account].access_token;
+    
+    // 发送get请求
+    [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) { // 请求成功的时候调用
+        //结束下拉刷新
+        [self.tableView.mj_header endRefreshing];
+        NSLog(@"%@",responseObject);
+        // 获取到微博数据 转换成模型
+        // 获取微博字典数组
+        
+        NSArray *dictArr = responseObject[@"statuses"];
+        // 把字典数组转换成模型数组
+        NSArray *statuses = (NSMutableArray *)[LYStatus mj_objectArrayWithKeyValuesArray:dictArr];
+        
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, statuses.count)];
+        // 把最新的微博数插入到最前面
+        [self.statuses insertObjects:statuses atIndexes:indexSet];
+        
+        // 刷新表格
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+}
+
+#pragma mark - 请求更多旧的微博
+- (void)loadMoreStatus
+{
+    // 创建请求管理者
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    // 创建一个参数字典
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    if (self.statuses.count) { // 有微博数据，才需要下拉刷新
+        long long maxId = [[[self.statuses lastObject] idstr] longLongValue] - 1;
+        params[@"max_id"] = [NSString stringWithFormat:@"%lld",maxId];
+    }
+    params[@"access_token"] = [LYAccountTool account].access_token;
+    
+    // 发送get请求
+    [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) { // 请求成功的时候调用
+        
+        // 结束上拉刷新
+        [self.tableView.mj_footer endRefreshing];
+        
+        // 获取到微博数据 转换成模型
+        // 获取微博字典数组
+        NSArray *dictArr = responseObject[@"statuses"];
+        // 把字典数组转换成模型数组
+        NSArray *statuses = (NSMutableArray *)[LYStatus mj_objectArrayWithKeyValuesArray:dictArr];
+        
+        // 把数组中的元素添加进去
+        [self.statuses addObjectsFromArray:statuses];
+        
+        // 刷新表格
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
     
 }
 
@@ -86,14 +196,24 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.statuses.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *ID =@"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    
+    // Configure the cell...
+    if (cell ==nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+    }
+    LYStatus *status =self.statuses[indexPath.row];
+    cell.textLabel.text =status.user.name;
+    [cell.imageView sd_setImageWithURL:status.user.profile_image_url placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+    cell.detailTextLabel.text = status.text;
+    return cell;
 }
 
 - (void)friendsearch

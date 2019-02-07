@@ -10,6 +10,10 @@
 #import "LYTabBarController.h"
 #import "LYNewFeatureController.h"
 #import "LYOAuthViewController.h"
+#import "LYAccount.h"
+#import "LYAccountTool.h"
+#import "LYRootVcTool.h"
+
 #define LYVersionKey @"version"
 
 @interface AppDelegate ()
@@ -27,9 +31,23 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
+    // 判断下有没有授权
+    if ([LYAccountTool account]) { // 已经授权
+        // 选择根控制器
+        [LYRootVcTool chooseRootViewController:self.window];
+        
+    }else{ // 进行授权
+        LYOAuthViewController *oauthVc = [[LYOAuthViewController alloc] init];
+        
+        // 设置窗口的根控制器
+        self.window.rootViewController = oauthVc;
+        
+    }
+    
     //创建授权界面
-    LYOAuthViewController *oauth = [[LYOAuthViewController alloc]init];
-    self.window.rootViewController = oauth;
+//    LYOAuthViewController *oauth = [[LYOAuthViewController alloc]init];
+//    self.window.rootViewController = oauth;
+    
     
 //    //1.获取当前版本号
 //    NSString *currentVerison = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
