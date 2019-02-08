@@ -8,6 +8,14 @@
 
 #import "LYAccountTool.h"
 #import "LYAccount.h"
+#import "LYAccountParam.h"
+#import "LYHttpTool.h"
+#import "MJExtension.h"
+
+#define LYAuthorizeBaseUrl @"https://api.weibo.com/oauth2/authorize"
+#define LYClient_id     @"2210415004"
+#define LYRedirect_uri  @"http://www.baidu.com"
+#define LYClient_secret @"d35649fd67979f92e965f1ad441f885c"
 
 @implementation LYAccountTool
 
@@ -35,6 +43,37 @@ static LYAccount *_account;
         
     }
     return _account;
+}
+
++ (void)accountWithCode:(NSString *)code success:(void (^)())success failure:(void (^)(NSError *))failure
+{
+    
+    // 创建参数模型
+    LYAccountParam *param = [[LYAccountParam alloc] init];
+    param.client_id = LYClient_id;
+    param.client_secret = LYClient_secret;
+    param.grant_type = @"authorization_code";
+    param.code = code;
+    param.redirect_uri = LYRedirect_uri;
+    
+    [LYHttpTool Post:@"https://api.weibo.com/oauth2/access_token" parameters:param.mj_keyValues success:^(id responseObject) {
+        // 字典转模型
+        LYAccount *account = [LYAccount accountWithDict:responseObject];
+        
+        // 保存账号信息:
+        // 数据存储一般我们开发中会搞一个业务类，专门处理数据的存储
+        // 以后我不想归档，用数据库，直接改业务类
+        [LYAccountTool saveAccount:account];
+        
+        if (success) {
+            success();
+        }
+        
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
 }
 
 @end

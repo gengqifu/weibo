@@ -78,6 +78,11 @@
 		41862733220C239800E521DB /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4186271D220C239700E521DB /* MJRefreshBackFooter.m */; };
 		41862734220C239800E521DB /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4186271E220C239700E521DB /* MJRefreshAutoFooter.m */; };
 		41862735220C239800E521DB /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 41862720220C239700E521DB /* MJRefreshComponent.m */; };
+		41862739220D148B00E521DB /* LYHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 41862738220D148B00E521DB /* LYHttpTool.m */; };
+		41862743220D1D3C00E521DB /* LYStatusParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 41862742220D1D3C00E521DB /* LYStatusParam.m */; };
+		41862747220D1DC400E521DB /* LYStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 41862746220D1DC400E521DB /* LYStatusResult.m */; };
+		4186274B220D1E8100E521DB /* LYStatusTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4186274A220D1E8100E521DB /* LYStatusTool.m */; };
+		41862750220D2C8A00E521DB /* LYAccountParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4186274F220D2C8A00E521DB /* LYAccountParam.m */; };
 		41A8A7F322014836004966D4 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7EF22014836004966D4 /* UIView+Frame.m */; };
 		41A8A7F422014836004966D4 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7F122014836004966D4 /* UIImage+image.m */; };
 		41A8A7F722014BFA004966D4 /* LYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7F622014BFA004966D4 /* LYNavigationController.m */; };
@@ -263,6 +268,16 @@
 		41862720220C239700E521DB /* MJRefreshComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshComponent.m; sourceTree = "<group>"; };
 		41862721220C239700E521DB /* MJRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooter.h; sourceTree = "<group>"; };
 		41862722220C239700E521DB /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
+		41862737220D148B00E521DB /* LYHttpTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYHttpTool.h; sourceTree = "<group>"; };
+		41862738220D148B00E521DB /* LYHttpTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYHttpTool.m; sourceTree = "<group>"; };
+		41862741220D1D3C00E521DB /* LYStatusParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYStatusParam.h; sourceTree = "<group>"; };
+		41862742220D1D3C00E521DB /* LYStatusParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYStatusParam.m; sourceTree = "<group>"; };
+		41862745220D1DC400E521DB /* LYStatusResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYStatusResult.h; sourceTree = "<group>"; };
+		41862746220D1DC400E521DB /* LYStatusResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYStatusResult.m; sourceTree = "<group>"; };
+		41862749220D1E8100E521DB /* LYStatusTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYStatusTool.h; sourceTree = "<group>"; };
+		4186274A220D1E8100E521DB /* LYStatusTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYStatusTool.m; sourceTree = "<group>"; };
+		4186274E220D2C8A00E521DB /* LYAccountParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYAccountParam.h; sourceTree = "<group>"; };
+		4186274F220D2C8A00E521DB /* LYAccountParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYAccountParam.m; sourceTree = "<group>"; };
 		41A8A7EF22014836004966D4 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		41A8A7F022014836004966D4 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		41A8A7F122014836004966D4 /* UIImage+image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+image.m"; sourceTree = "<group>"; };
@@ -461,6 +476,8 @@
 		4186262B220C11DE00E521DB /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				4186273A220D1AEC00E521DB /* StatusTool */,
+				41862736220D146500E521DB /* HttpTool */,
 				41862630220C145B00E521DB /* RootVcTool */,
 				4186262C220C11EF00E521DB /* AccoutTool */,
 			);
@@ -470,6 +487,7 @@
 		4186262C220C11EF00E521DB /* AccoutTool */ = {
 			isa = PBXGroup;
 			children = (
+				4186274C220D2C1000E521DB /* AccessTokenParam */,
 				4186262D220C121700E521DB /* LYAccountTool.h */,
 				4186262E220C121700E521DB /* LYAccountTool.m */,
 			);
@@ -660,6 +678,62 @@
 				41862722220C239700E521DB /* MJRefreshBackFooter.h */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		41862736220D146500E521DB /* HttpTool */ = {
+			isa = PBXGroup;
+			children = (
+				41862737220D148B00E521DB /* LYHttpTool.h */,
+				41862738220D148B00E521DB /* LYHttpTool.m */,
+			);
+			path = HttpTool;
+			sourceTree = "<group>";
+		};
+		4186273A220D1AEC00E521DB /* StatusTool */ = {
+			isa = PBXGroup;
+			children = (
+				41862748220D1E6E00E521DB /* StatusTool */,
+				41862744220D1DB300E521DB /* StatusResult */,
+				41862740220D1D2500E521DB /* StatusParam */,
+			);
+			path = StatusTool;
+			sourceTree = "<group>";
+		};
+		41862740220D1D2500E521DB /* StatusParam */ = {
+			isa = PBXGroup;
+			children = (
+				41862741220D1D3C00E521DB /* LYStatusParam.h */,
+				41862742220D1D3C00E521DB /* LYStatusParam.m */,
+			);
+			name = StatusParam;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		41862744220D1DB300E521DB /* StatusResult */ = {
+			isa = PBXGroup;
+			children = (
+				41862745220D1DC400E521DB /* LYStatusResult.h */,
+				41862746220D1DC400E521DB /* LYStatusResult.m */,
+			);
+			path = StatusResult;
+			sourceTree = "<group>";
+		};
+		41862748220D1E6E00E521DB /* StatusTool */ = {
+			isa = PBXGroup;
+			children = (
+				41862749220D1E8100E521DB /* LYStatusTool.h */,
+				4186274A220D1E8100E521DB /* LYStatusTool.m */,
+			);
+			path = StatusTool;
+			sourceTree = "<group>";
+		};
+		4186274C220D2C1000E521DB /* AccessTokenParam */ = {
+			isa = PBXGroup;
+			children = (
+				4186274E220D2C8A00E521DB /* LYAccountParam.h */,
+				4186274F220D2C8A00E521DB /* LYAccountParam.m */,
+			);
+			path = AccessTokenParam;
 			sourceTree = "<group>";
 		};
 		41D9BCC321D88ABC00269354 = {
@@ -1071,6 +1145,7 @@
 			files = (
 				4186264C220C1BE700E521DB /* MJPropertyType.m in Sources */,
 				4186272C220C239800E521DB /* MJRefreshAutoGifFooter.m in Sources */,
+				41862750220D2C8A00E521DB /* LYAccountParam.m in Sources */,
 				41862692220C1F8A00E521DB /* UIButton+WebCache.m in Sources */,
 				41A8A80D2202A0F8004966D4 /* LYHomeTitle.m in Sources */,
 				41862683220C1F8A00E521DB /* UIImage+WebP.m in Sources */,
@@ -1081,6 +1156,7 @@
 				4186262F220C121700E521DB /* LYAccountTool.m in Sources */,
 				41862654220C1BE700E521DB /* MJPropertyKey.m in Sources */,
 				4186268B220C1F8A00E521DB /* SDWebImageCompat.m in Sources */,
+				4186274B220D1E8100E521DB /* LYStatusTool.m in Sources */,
 				418625F62208180F00E521DB /* LYNewFeatureCell.m in Sources */,
 				4186264D220C1BE700E521DB /* NSObject+MJKeyValue.m in Sources */,
 				41862621220BD42D00E521DB /* AFURLConnectionOperation.m in Sources */,
@@ -1097,9 +1173,11 @@
 				41862724220C239800E521DB /* MJRefreshConst.m in Sources */,
 				41862735220C239800E521DB /* MJRefreshComponent.m in Sources */,
 				41A8A80B2202A0F8004966D4 /* LYCover.m in Sources */,
+				41862743220D1D3C00E521DB /* LYStatusParam.m in Sources */,
 				41A8A80422029B8D004966D4 /* UIBarButtonItem+Item.m in Sources */,
 				41D9BD2A21D8DAD400269354 /* LYTabBar.m in Sources */,
 				41862652220C1BE700E521DB /* NSObject+MJClass.m in Sources */,
+				41862747220D1DC400E521DB /* LYStatusResult.m in Sources */,
 				41A8A7F422014836004966D4 /* UIImage+image.m in Sources */,
 				418625F92208199F00E521DB /* LYNewFeatureController.m in Sources */,
 				41862727220C239800E521DB /* UIView+MJExtension.m in Sources */,
@@ -1129,6 +1207,7 @@
 				41862624220BD42D00E521DB /* AFURLRequestSerialization.m in Sources */,
 				4186261F220BD42D00E521DB /* AFURLResponseSerialization.m in Sources */,
 				41862651220C1BE700E521DB /* NSObject+MJProperty.m in Sources */,
+				41862739220D148B00E521DB /* LYHttpTool.m in Sources */,
 				41862732220C239800E521DB /* MJRefreshHeader.m in Sources */,
 				4186265E220C1C9600E521DB /* LYPhoto.m in Sources */,
 				41D9BD3821D9E3C500269354 /* LYMessageViewController.m in Sources */,

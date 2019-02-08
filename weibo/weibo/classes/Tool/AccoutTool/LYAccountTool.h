@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (LYAccount *)account;
 
++ (void)accountWithCode:(NSString *)code success:(void(^)())success failure:(void(^)(NSError *error))failure;
+
 @end
 
 NS_ASSUME_NONNULL_END

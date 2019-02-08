@@ -22,6 +22,8 @@
 #import "LYStatus.h"
 #import "LYAccountTool.h"
 #import "LYAccount.h"
+#import "LYHttpTool.h"
+#import "LYStatusTool.h"
 
 @interface LYHomeViewController ()<LYCoverDelegate>
 
@@ -70,28 +72,15 @@
 #pragma mark - 请求最新的微博
 - (void)loadNewStatus
 {
-    // 创建请求管理者
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
-    // 创建一个参数字典
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    if (self.statuses.count) {
-        params[@"since_id"] = [self.statuses[0] idstr];
+    NSString *sinceId = nil;
+    if (self.statuses.count) { // 有微博数据，才需要下拉刷新
+        
+        sinceId = [self.statuses[0] idstr];
     }
     
-    params[@"access_token"] = [LYAccountTool account].access_token;
-    
-    // 发送get请求
-    [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) { // 请求成功的时候调用
-        //结束下拉刷新
+    [LYStatusTool newStatusWithSinceId:sinceId success:^(NSArray *statuses) {
+        // 结束下拉刷新
         [self.tableView.mj_header endRefreshing];
-        NSLog(@"%@",responseObject);
-        // 获取到微博数据 转换成模型
-        // 获取微博字典数组
-        
-        NSArray *dictArr = responseObject[@"statuses"];
-        // 把字典数组转换成模型数组
-        NSArray *statuses = (NSMutableArray *)[LYStatus mj_objectArrayWithKeyValuesArray:dictArr];
         
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, statuses.count)];
         // 把最新的微博数插入到最前面
@@ -100,7 +89,7 @@
         // 刷新表格
         [self.tableView reloadData];
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         
     }];
 }
@@ -108,35 +97,21 @@
 #pragma mark - 请求更多旧的微博
 - (void)loadMoreStatus
 {
-    // 创建请求管理者
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    // 创建一个参数字典
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    NSString *maxIdStr = nil;
     if (self.statuses.count) { // 有微博数据，才需要下拉刷新
         long long maxId = [[[self.statuses lastObject] idstr] longLongValue] - 1;
-        params[@"max_id"] = [NSString stringWithFormat:@"%lld",maxId];
+        maxIdStr = [NSString stringWithFormat:@"%lld",maxId];
     }
-    params[@"access_token"] = [LYAccountTool account].access_token;
-    
-    // 发送get请求
-    [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) { // 请求成功的时候调用
+    [LYStatusTool moreStatusWithMaxId:maxIdStr success:^(NSArray *statuses) {
         
         // 结束上拉刷新
         [self.tableView.mj_footer endRefreshing];
-        
-        // 获取到微博数据 转换成模型
-        // 获取微博字典数组
-        NSArray *dictArr = responseObject[@"statuses"];
-        // 把字典数组转换成模型数组
-        NSArray *statuses = (NSMutableArray *)[LYStatus mj_objectArrayWithKeyValuesArray:dictArr];
-        
         // 把数组中的元素添加进去
         [self.statuses addObjectsFromArray:statuses];
-        
         // 刷新表格
         [self.tableView reloadData];
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         
     }];
     
