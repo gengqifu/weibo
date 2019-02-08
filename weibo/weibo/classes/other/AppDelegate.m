@@ -13,10 +13,12 @@
 #import "LYAccount.h"
 #import "LYAccountTool.h"
 #import "LYRootVcTool.h"
+#import <AVFoundation/AVFoundation.h>
 
 #define LYVersionKey @"version"
 
 @interface AppDelegate ()
+@property (nonatomic, strong) AVAudioPlayer *player;
 
 @end
 
@@ -26,6 +28,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     NSLog(@"%s",__func__);
+    
+    //注册通知
+    UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+    [application registerUserNotificationSettings:setting];
     
     // 创建窗口
     
@@ -82,12 +88,28 @@
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"爸比我要喝奶奶.mp3" withExtension:nil];
+    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [player prepareToPlay];
+    // 无限播放
+    player.numberOfLoops = -1;
+    
+    [player play];
+    
+    _player = player;
 }
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    // 开启一个后台任务,时间不确定，优先级比较低，假如系统要关闭应用，首先考虑此task
+    UIBackgroundTaskIdentifier ID = [application beginBackgroundTaskWithExpirationHandler:^{
+        
+        // 当后台任务结束的时候调用
+        [application endBackgroundTask:ID];
+        
+    }];
 }
 
 

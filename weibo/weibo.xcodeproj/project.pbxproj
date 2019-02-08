@@ -83,6 +83,10 @@
 		41862747220D1DC400E521DB /* LYStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 41862746220D1DC400E521DB /* LYStatusResult.m */; };
 		4186274B220D1E8100E521DB /* LYStatusTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4186274A220D1E8100E521DB /* LYStatusTool.m */; };
 		41862750220D2C8A00E521DB /* LYAccountParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 4186274F220D2C8A00E521DB /* LYAccountParam.m */; };
+		41862754220D6E6300E521DB /* LYBaseParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 41862753220D6E6300E521DB /* LYBaseParam.m */; };
+		41862759220D6F3100E521DB /* LYUnreadMsgParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 41862758220D6F3100E521DB /* LYUnreadMsgParam.m */; };
+		4186275D220D6F9C00E521DB /* LYUnreadResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4186275C220D6F9C00E521DB /* LYUnreadResult.m */; };
+		41862761220D703F00E521DB /* LYUnreadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 41862760220D703F00E521DB /* LYUnreadTool.m */; };
 		41A8A7F322014836004966D4 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7EF22014836004966D4 /* UIView+Frame.m */; };
 		41A8A7F422014836004966D4 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7F122014836004966D4 /* UIImage+image.m */; };
 		41A8A7F722014BFA004966D4 /* LYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A8A7F622014BFA004966D4 /* LYNavigationController.m */; };
@@ -278,6 +282,14 @@
 		4186274A220D1E8100E521DB /* LYStatusTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYStatusTool.m; sourceTree = "<group>"; };
 		4186274E220D2C8A00E521DB /* LYAccountParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYAccountParam.h; sourceTree = "<group>"; };
 		4186274F220D2C8A00E521DB /* LYAccountParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYAccountParam.m; sourceTree = "<group>"; };
+		41862752220D6E6300E521DB /* LYBaseParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYBaseParam.h; sourceTree = "<group>"; };
+		41862753220D6E6300E521DB /* LYBaseParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYBaseParam.m; sourceTree = "<group>"; };
+		41862757220D6F3100E521DB /* LYUnreadMsgParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYUnreadMsgParam.h; sourceTree = "<group>"; };
+		41862758220D6F3100E521DB /* LYUnreadMsgParam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYUnreadMsgParam.m; sourceTree = "<group>"; };
+		4186275B220D6F9C00E521DB /* LYUnreadResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYUnreadResult.h; sourceTree = "<group>"; };
+		4186275C220D6F9C00E521DB /* LYUnreadResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYUnreadResult.m; sourceTree = "<group>"; };
+		4186275F220D703F00E521DB /* LYUnreadTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYUnreadTool.h; sourceTree = "<group>"; };
+		41862760220D703F00E521DB /* LYUnreadTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYUnreadTool.m; sourceTree = "<group>"; };
 		41A8A7EF22014836004966D4 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		41A8A7F022014836004966D4 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		41A8A7F122014836004966D4 /* UIImage+image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+image.m"; sourceTree = "<group>"; };
@@ -476,6 +488,8 @@
 		4186262B220C11DE00E521DB /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				41862755220D6EF300E521DB /* UnreadMsg */,
+				41862751220D6E4100E521DB /* BaseParam */,
 				4186273A220D1AEC00E521DB /* StatusTool */,
 				41862736220D146500E521DB /* HttpTool */,
 				41862630220C145B00E521DB /* RootVcTool */,
@@ -736,6 +750,59 @@
 			path = AccessTokenParam;
 			sourceTree = "<group>";
 		};
+		41862751220D6E4100E521DB /* BaseParam */ = {
+			isa = PBXGroup;
+			children = (
+				41862752220D6E6300E521DB /* LYBaseParam.h */,
+				41862753220D6E6300E521DB /* LYBaseParam.m */,
+			);
+			path = BaseParam;
+			sourceTree = "<group>";
+		};
+		41862755220D6EF300E521DB /* UnreadMsg */ = {
+			isa = PBXGroup;
+			children = (
+				4186275E220D702E00E521DB /* UnreadTool */,
+				4186275A220D6F8700E521DB /* UnreadResult */,
+				41862756220D6F0100E521DB /* UnreadMsgParam */,
+			);
+			path = UnreadMsg;
+			sourceTree = "<group>";
+		};
+		41862756220D6F0100E521DB /* UnreadMsgParam */ = {
+			isa = PBXGroup;
+			children = (
+				41862757220D6F3100E521DB /* LYUnreadMsgParam.h */,
+				41862758220D6F3100E521DB /* LYUnreadMsgParam.m */,
+			);
+			path = UnreadMsgParam;
+			sourceTree = "<group>";
+		};
+		4186275A220D6F8700E521DB /* UnreadResult */ = {
+			isa = PBXGroup;
+			children = (
+				4186275B220D6F9C00E521DB /* LYUnreadResult.h */,
+				4186275C220D6F9C00E521DB /* LYUnreadResult.m */,
+			);
+			path = UnreadResult;
+			sourceTree = "<group>";
+		};
+		4186275E220D702E00E521DB /* UnreadTool */ = {
+			isa = PBXGroup;
+			children = (
+				4186275F220D703F00E521DB /* LYUnreadTool.h */,
+				41862760220D703F00E521DB /* LYUnreadTool.m */,
+			);
+			path = UnreadTool;
+			sourceTree = "<group>";
+		};
+		41862762220D721100E521DB /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		41D9BCC321D88ABC00269354 = {
 			isa = PBXGroup;
 			children = (
@@ -879,8 +946,8 @@
 		41D9BD1521D8D15700269354 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				41862762220D721100E521DB /* model */,
 				41D9BD1821D8D16B00269354 /* controller */,
-				41D9BD1721D8D16600269354 /* model */,
 				41D9BD1621D8D16000269354 /* view */,
 			);
 			path = main;
@@ -897,13 +964,6 @@
 				41D9BD4021D9E56300269354 /* LYTabBarButton.m */,
 			);
 			path = view;
-			sourceTree = "<group>";
-		};
-		41D9BD1721D8D16600269354 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
 			sourceTree = "<group>";
 		};
 		41D9BD1821D8D16B00269354 /* controller */ = {
@@ -1077,6 +1137,11 @@
 				TargetAttributes = {
 					41D9BCCB21D88ABC00269354 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					41D9BCE321D88ABE00269354 = {
 						CreatedOnToolsVersion = 10.0;
@@ -1173,9 +1238,11 @@
 				41862724220C239800E521DB /* MJRefreshConst.m in Sources */,
 				41862735220C239800E521DB /* MJRefreshComponent.m in Sources */,
 				41A8A80B2202A0F8004966D4 /* LYCover.m in Sources */,
+				4186275D220D6F9C00E521DB /* LYUnreadResult.m in Sources */,
 				41862743220D1D3C00E521DB /* LYStatusParam.m in Sources */,
 				41A8A80422029B8D004966D4 /* UIBarButtonItem+Item.m in Sources */,
 				41D9BD2A21D8DAD400269354 /* LYTabBar.m in Sources */,
+				41862754220D6E6300E521DB /* LYBaseParam.m in Sources */,
 				41862652220C1BE700E521DB /* NSObject+MJClass.m in Sources */,
 				41862747220D1DC400E521DB /* LYStatusResult.m in Sources */,
 				41A8A7F422014836004966D4 /* UIImage+image.m in Sources */,
@@ -1216,6 +1283,7 @@
 				41862731220C239800E521DB /* MJRefreshFooter.m in Sources */,
 				41862626220BD42D00E521DB /* AFNetworkReachabilityManager.m in Sources */,
 				41D9BD3521D9E3A200269354 /* LYProfileViewController.m in Sources */,
+				41862761220D703F00E521DB /* LYUnreadTool.m in Sources */,
 				41862728220C239800E521DB /* MJRefreshBackGifFooter.m in Sources */,
 				41862688220C1F8A00E521DB /* SDWebImageDownloader.m in Sources */,
 				4186268A220C1F8A00E521DB /* UIImage+MultiFormat.m in Sources */,
@@ -1225,6 +1293,7 @@
 				4186272E220C239800E521DB /* MJRefreshNormalHeader.m in Sources */,
 				4186268D220C1F8A00E521DB /* SDImageCache.m in Sources */,
 				4186268C220C1F8A00E521DB /* SDWebImagePrefetcher.m in Sources */,
+				41862759220D6F3100E521DB /* LYUnreadMsgParam.m in Sources */,
 				41862656220C1BE700E521DB /* MJFoundation.m in Sources */,
 				41862653220C1BE700E521DB /* NSString+MJExtension.m in Sources */,
 				4186272D220C239800E521DB /* MJRefreshAutoNormalFooter.m in Sources */,

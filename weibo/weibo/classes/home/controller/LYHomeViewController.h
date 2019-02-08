@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LYHomeViewController : UITableViewController
 
+-(void)refresh;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -209,4 +209,11 @@
     [self.navigationController pushViewController:one animated:YES];
 }
 
+#pragma mark - refresh
+-(void)refresh
+{
+    [self.tableView.mj_header beginRefreshing];
+    NSLog(@"in to refreash");
+}
+
 @end

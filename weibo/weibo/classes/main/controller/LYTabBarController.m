@@ -14,10 +14,21 @@
 #import "LYDiscoverViewController.h"
 #import "LYProfileViewController.h"
 #import "LYNavigationController.h"
+#import "LYUnreadTool.h"
+#import "LYUnreadResult.h"
+
+#import "MJExtension.h"
+#import "UIImageView+WebCache.h"
+#import "MJRefresh.h"
 
 @interface LYTabBarController ()<LYTabBarDelegate>
 
 @property(nonatomic,strong) NSMutableArray *items;
+
+@property  (nonatomic,weak) LYHomeViewController    *home;
+@property (nonatomic,weak) LYDiscoverViewController *discover;
+@property (nonatomic,weak) LYMessageViewController *message;
+@property (nonatomic,weak) LYProfileViewController *profile;
 
 @end
 
@@ -39,6 +50,29 @@
     [self setUpAllChildViewController];
     //
     [self setUpTabBar];
+    
+    //  请求微博未读数
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(requestUnread) userInfo:nil repeats:YES];
+    
+}
+
+#pragma mark 请求未读数
+-(void)requestUnread
+{
+    [LYUnreadTool unreadWithSuccess:^(LYUnreadResult *result) {
+        //设置首页微博未读数
+        // NSLog(@"this is return result%d",result.status);
+        _home.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",result.status];
+        // NSLog(@"this is home badge%@",_home.tabBarItem.badgeValue);
+        //设置消息未读数
+        _message.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",result.messageCount];
+        //设置我的未读数
+        _profile.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",result.follower];
+        //  设置未读数总和
+        [UIApplication sharedApplication].applicationIconBadgeNumber = result.totalCount;
+    } failure:^(NSError *error) {
+        
+    }];
     
 }
 
@@ -68,8 +102,12 @@
 #pragma mark - 当点击tabBar上的按钮调用
 -(void)tabBar:(LYTabBar *)tabBar didClickButton:(NSInteger)index
 {
+    if (index ==0 && self.selectedIndex == index) {
+        //点击首页刷新
+        [_home refresh];
+        NSLog(@"this is refresh");
+    }
     self.selectedIndex = index;
-    NSLog(@"this is click");
 }
 
 #pragma mark-添加所有子控制器
@@ -82,22 +120,25 @@
     LYHomeViewController *home = [[LYHomeViewController alloc] init];
     [self setUpOneChildViewController:home image:[UIImage imageNamed:@"tabbar_home"] selectedImage:[UIImage imageWithOriginalName:@"tabbar_home_selected"] title:@"首页"];
     home.view.backgroundColor = [UIColor greenColor];
+    _home = home;
     
     // 消息
     LYMessageViewController *message = [[LYMessageViewController alloc] init];
     [self setUpOneChildViewController:message image:[UIImage imageNamed:@"tabbar_message_center"] selectedImage:[UIImage imageWithOriginalName:@"tabbar_message_center_selected"] title:@"消息"];
     message.view.backgroundColor = [UIColor blueColor];
+    _message = message;
     
     // 发现
     LYDiscoverViewController *discover = [[LYDiscoverViewController alloc] init];
     [self setUpOneChildViewController:discover image:[UIImage imageNamed:@"tabbar_discover"] selectedImage:[UIImage imageWithOriginalName:@"tabbar_discover_selected"] title:@"发现"];
     discover.view.backgroundColor = [UIColor purpleColor];
-    
+    _discover = discover;
     
     // 我
     LYProfileViewController *profile = [[LYProfileViewController alloc] init];
     [self setUpOneChildViewController:profile image:[UIImage imageNamed:@"tabbar_profile"] selectedImage:[UIImage imageWithOriginalName:@"tabbar_profile_selected"] title:@"我"];
     profile.view.backgroundColor = [UIColor lightGrayColor];
+    _profile = profile;
 }
 
 
